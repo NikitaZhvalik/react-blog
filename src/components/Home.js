@@ -1,31 +1,41 @@
+import { useEffect, useState } from 'react';
 import BlogList from './BlogList'
 
 const Home = () => {
 
-    const blog = [
-        {
-            title: "My First Blog",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
-            author: "John Doe",
-            id: 1
-        },
-        {
-            title: "Second Post",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
-            author: "Mary Jane",
-            id: 2
-        },
-        {
-            title: "Third Post",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
-            author: "Tom Soyer",
-            id: 3
-        }
-    ]
+    // const handleDel = (id) => {
+    //     const newPosts = posts.filter((post) => post.id !== id);
+    //     setPosts(newPosts);
+    // }
+
+    const [posts, setPosts] = useState(null)
+    const [isLoading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        fetch('http://localhost:8000/posts')
+        .then((response) => {
+            if (response.ok != true) {
+                throw Error('Не могу получить данные из этого ресурса!')
+            }
+            return response.json()
+        })
+        .then((data) => {
+            setPosts(data)
+            setLoading(false)
+            setError(null)
+        })
+        .catch((error) => {
+            setError(error.message)
+            setLoading(false)
+        })
+    }, [])
 
 	return (
 		<div className='home'>
-            <BlogList blog={blog} />
+            {error && <div>{error}</div>}
+            {isLoading && <div>loading...</div>}
+            {posts && <BlogList posts={posts} />}
 		</div>
 	);
 };
