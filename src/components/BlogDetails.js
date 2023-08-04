@@ -17,7 +17,7 @@ const BlogDetails  = () => {
                     <p>written by {blog.author}</p>
                     <div>{blog.body}</div>
                 </article>
-            )}
+            )}  
         </div>
     );
 }
