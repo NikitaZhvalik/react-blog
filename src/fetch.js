@@ -1,0 +1,1 @@
+export const server = "https://warp-canyon-meteoroid.glitch.me/posts/";

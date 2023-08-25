@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
+import { server } from './fetch'
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -20,7 +21,7 @@ const Create = () => {
         setIsPending(true);
 
         setTimeout(() => {
-            fetch('http://localhost:8000/posts', {
+            fetch(server, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(blog)

@@ -1,9 +1,9 @@
-const deletePost = (id, callback) => {
-    fetch('http://localhost:8000/posts/' + id, {
-        method: 'DELETE'
-    }).then(()=>{
-        if (typeof callback === "function") callback();
-    })
-}
+import { server } from "./fetch";
+
+const deletePost = (id) => {
+  fetch(server + id, {
+    method: "DELETE",
+  })
+};
 
 export default deletePost;

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import deletePost from './deletePost'
 
-const BlogList = ({ posts, setUpdateFlag, updateFlag }) => {
-
+const BlogList = ({ posts }) => {
 	return (
 		<div className='blog'>
 			{posts.map((post) => (
@@ -11,7 +10,7 @@ const BlogList = ({ posts, setUpdateFlag, updateFlag }) => {
 						<h2>{post.title}</h2>
 						<p>{post.author}</p>
 					</Link>
-					<button onClick={() => {deletePost(post.id, setUpdateFlag(!updateFlag))}} className='btn-delete'>Delete</button>
+					<button onClick={() => {deletePost(post.id)}} className='btn-delete'>Delete</button>
 				</div>
 			))}
 		</div>
