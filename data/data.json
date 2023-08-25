@@ -1,39 +1,21 @@
 {
   "posts": [
     {
-      "title": "My First Blog",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
-      "author": "John Doe",
-      "id": 1
-    },
-    {
-      "title": "Second Post",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
-      "author": "Mary Jane",
-      "id": 2
-    },
-    {
       "title": "Third Post",
       "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem fuga nisi cum earum odio assumenda provident laborum quisquam ipsum, eaque accusantium maiores incidunt atque porro dicta dolores ad soluta modi?",
       "author": "Tom Soyer",
       "id": 3
     },
     {
-      "title": "safd",
-      "body": "fas",
-      "author": "John Joe",
-      "id": 4
-    },
-    {
-      "title": "dafs",
-      "body": "dsfa",
-      "author": "John Joe",
+      "title": "1st post",
+      "body": "Hi",
+      "author": "John Doe",
       "id": 5
     },
     {
-      "title": "afsd",
-      "body": "fasd",
-      "author": "John Joe",
+      "title": "Hi",
+      "body": "I'am Mary Jane",
+      "author": "Mary Jane",
       "id": 6
     }
   ]
